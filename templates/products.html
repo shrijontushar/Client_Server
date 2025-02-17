@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='products.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo">My App</a>
+            <div class="nav-links">
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('change_password') }}" class="btn">Change Password</a>
+                    <a href="{{ url_for('logout') }}" class="btn logout-btn">Logout</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products List -->
+    <div class="container">
+        <h1>Products</h1>
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash flash-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Products -->
+        <div class="products-list">
+            {% for product in products %}
+                <div class="product-item">
+                    <h3>{{ product.name }}</h3>
+                    <p>Price: ${{ product.price }}</p>
+                    <p>Stock: {{ product.stock }}</p>
+                    
+                    {% if current_user.is_authenticated %}
+                        <!-- User can buy products -->
+                        {% if current_user.role != 'admin' %}
+                            <form action="{{ url_for('buy_product', product_id=product.id) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Buy Product</button>
+                            </form>
+                        {% endif %}
+                        
+                        <!-- Admin can delete products -->
+                        {% if current_user.role == 'admin' %}
+                            <form action="{{ url_for('delete_product', product_id=product.id) }}" method="POST">
+                                <button type="submit" class="btn btn-danger">Delete Product</button>
+                            </form>
+                        {% endif %}
+                    {% else %}
+                        <p>Please log in to buy or delete products.</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Back to Home button -->
+        <div class="back-home-container">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </div>
+
+</body>
+</html>

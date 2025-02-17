@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo">My App</a>
+            <div class="nav-links">
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('change_password') }}" class="btn">Change Password</a>
+                    <!-- Add Product button visible only for admins -->
+                    {% if current_user.role == 'admin' %}
+                        <a href="{{ url_for('add_product') }}" class="btn">Add Product</a>
+                    {% endif %}
+                    <a href="{{ url_for('logout') }}" class="btn logout-btn">Logout</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome</h1>
+        {% if current_user.is_authenticated %}
+            <p>Hello, {{ current_user.username }}!</p>
+            <p>Welcome back to My App.</p>
+
+            <div class="buttons-container">
+                {% if current_user.role != 'admin' %}
+                    <!-- Display Give Feedback button only for users -->
+                    <a href="{{ url_for('feedback') }}" class="btn">Give Feedback</a>
+                {% endif %}
+
+                {% if current_user.role == 'admin' %}
+                    <!-- Display View Feedback button for admin -->
+                    <a href="{{ url_for('view_feedback') }}" class="btn">View Feedback</a>
+                    <!-- Only display View Products for admin -->
+                    <a href="{{ url_for('products') }}" class="btn">View Products</a>
+                {% else %}
+                    <!-- Display View Products button for users -->
+                    <a href="{{ url_for('products') }}" class="btn">View Products</a>
+                {% endif %}
+            </div>
+        {% else %}
+            <p>Please log in to access more features.</p>
+            <div class="buttons-container">
+                <a href="{{ url_for('login') }}" class="btn">Login</a>
+                <a href="{{ url_for('register') }}" class="btn">Register</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
