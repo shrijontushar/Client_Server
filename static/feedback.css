@@ -24,7 +24,7 @@ textarea.form-control {
     border: 1px solid #ddd;
     resize: vertical; /* Allow resizing vertically */
 }
-/* Navbar */
+
 nav {
     width: 100%;
     background-color: #3498db;
@@ -88,7 +88,7 @@ p {
     margin-top: 20px;
 }
 
-/* Button Styles */
+
 button, .buttons-container a {
     font-size: 16px;
     color: white;
@@ -111,5 +111,4 @@ button:active, .buttons-container a:active {
     background-color: #1f6c8c;
 }
 
-/* Responsive Design */
 @media (max-width: 

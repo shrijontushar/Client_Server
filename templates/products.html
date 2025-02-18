@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav>
         <div class="nav-container">
             <a href="{{ url_for('index') }}" class="logo">My App</a>
@@ -21,11 +20,9 @@
         </div>
     </nav>
 
-    <!-- Products List -->
     <div class="container">
         <h1>Products</h1>
 
-        <!-- Flash Messages -->
         {% with messages = get_flashed_messages(with_categories=True) %}
             {% if messages %}
                 <div class="flash-messages">
@@ -36,7 +33,6 @@
             {% endif %}
         {% endwith %}
 
-        <!-- Products -->
         <div class="products-list">
             {% for product in products %}
                 <div class="product-item">
@@ -65,7 +61,6 @@
             {% endfor %}
         </div>
 
-        <!-- Back to Home button -->
         <div class="back-home-container">
             <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
         </div>

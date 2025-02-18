@@ -16,7 +16,7 @@ body {
     flex-direction: column;
 }
 
-/* Navbar */
+
 nav {
     width: 100%;
     background-color: #3498db;
@@ -55,7 +55,7 @@ nav {
     background-color: #1f6c8c;
 }
 
-/* Main Content */
+
 .container {
     background-color: white;
     border-radius: 10px;
@@ -78,7 +78,7 @@ p {
     margin-bottom: 20px;
 }
 
-/* Container for buttons */
+
 .buttons-container {
     display: flex;
     justify-content: center;
@@ -86,7 +86,7 @@ p {
     flex-wrap: wrap;
 }
 
-/* Button Styles */
+
 button, a {
     font-size: 16px;
     color: white;
@@ -103,7 +103,7 @@ button:hover, a:hover {
     background-color: #2980b9;
 }
 
-/* Responsive Design */
+
 @media (max-width: 600px) {
     .container {
         width: 90%;
@@ -115,7 +115,7 @@ button:hover, a:hover {
     }
 }
 
-/* Flash Message Styles */
+
 .flash-message {
     padding: 10px;
     margin-bottom: 20px;

@@ -18,7 +18,7 @@ migrate = Migrate(app, db)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-# User model
+
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(150), unique=True, nullable=False)
@@ -34,7 +34,7 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return bcrypt.check_password_hash(self.password, password)
 
-# Product model
+
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
@@ -44,19 +44,19 @@ class Product(db.Model):
     
     owner = db.relationship('User', back_populates='products')
 
-# Feedback model
+
 class Feedback(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     feedback = db.Column(db.String(200), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Add foreign key to User
     user = db.relationship('User', backref='feedbacks', lazy=True)  # Define relationship with User
 
-# Login manager
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-# Forms
+
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[InputRequired(), Length(min=4, max=150)])
     password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=150)])
@@ -80,7 +80,7 @@ class ChangePasswordForm(FlaskForm):
     confirm_password = PasswordField('Confirm New Password', validators=[InputRequired(), Length(min=8, max=150)])
 
 
-# Routes
+
 
 @app.route('/')
 def index():
@@ -268,10 +268,7 @@ def delete_feedback(feedback_id):
     return redirect(url_for('view_feedback'))
 
 
-
-
-# Initialize the database (run once to create tables)
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()  # Manually create the tables
+        db.create_all()  
     app.run(debug=True)

@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav>
         <div class="nav-container">
             <a href="{{ url_for('index') }}" class="logo">My App</a>
@@ -21,11 +20,9 @@
         </div>
     </nav>
 
-    <!-- Add Product Form -->
     <div class="container">
         <h1>Add Product</h1>
 
-        <!-- Flash Messages -->
         {% with messages = get_flashed_messages(with_categories=True) %}
             {% if messages %}
                 <div class="flash-messages">

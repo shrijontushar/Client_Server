@@ -1,4 +1,4 @@
-/* General styles for the body and layout */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
@@ -8,7 +8,7 @@ body {
     min-height: 100vh;
     margin: 0;
 }
-/* Navbar */
+
 nav {
     width: 100%;
     background-color: #3498db;
@@ -47,7 +47,7 @@ nav {
 }
 
 
-/* Container for the entire form */
+
 .container {
     background-color: white;
     padding: 30px;
@@ -57,7 +57,6 @@ nav {
     max-width: 400px;
 }
 
-/* Form heading */
 h1 {
     text-align: center;
     font-size: 24px;
@@ -65,7 +64,7 @@ h1 {
     color: #333;
 }
 
-/* Flash message style */
+
 .flash-messages {
     margin-bottom: 20px;
 }
@@ -78,7 +77,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Input fields */
+
 input.form-control {
     width: 100%;
     padding: 10px;
@@ -94,7 +93,7 @@ input.form-control:focus {
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
 }
 
-/* Submit button */
+
 button.btn {
     width: 100%;
     padding: 10px;
@@ -110,7 +109,7 @@ button.btn:hover {
     background-color: #0056b3;
 }
 
-/* Links */
+
 a {
     color: #007bff;
     text-decoration: none;
@@ -120,7 +119,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Additional text styles */
+
 .register-link {
     text-align: center;
     font-size: 14px;

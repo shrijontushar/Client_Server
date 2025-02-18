@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Full-screen styling */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
@@ -15,7 +15,7 @@ body {
     height: 100vh;
     color: #333;
 }
-/* Navbar */
+
 nav {
     width: 100%;
     background-color: #3498db;
@@ -54,7 +54,7 @@ nav {
 }
 
 
-/* Main container */
+
 .container {
     width: 100%;
     max-width: 400px;
@@ -65,14 +65,14 @@ nav {
     text-align: center;
 }
 
-/* Title */
+
 h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #444;
 }
 
-/* Form elements */
+
 .form-group {
     margin-bottom: 15px;
     text-align: left;
@@ -92,7 +92,7 @@ input {
     margin-top: 5px;
 }
 
-/* Button styling */
+
 .btn {
     width: 100%;
     padding: 12px;
@@ -109,7 +109,7 @@ input {
 .btn:hover {
     background-color: #0056b3;
 }
-/* Flash Messages */
+
 .flash-messages {
     margin-bottom: 15px;
 }
@@ -132,7 +132,7 @@ input {
     color: white;
 }
 
-/* Links */
+
 .register-link, .back-home {
     display: block;
     text-align: center;

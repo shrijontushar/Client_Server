@@ -1,0 +1,79 @@
+
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+input[type="text"], input[type="number"], input[type="file"], input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.flash-messages {
+    margin-bottom: 20px;
+}
+
+.flash {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.flash-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.flash-danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ccc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    width: auto;
+    margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #888;
+}

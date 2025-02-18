@@ -16,7 +16,7 @@ body {
     flex-direction: column;
 }
 
-/* Flash Messages */
+
 .flash-messages {
     margin-bottom: 20px;
 }
@@ -42,8 +42,6 @@ body {
     color: white;
 }
 
-/* Navbar */
-/* Navbar */
 nav {
     width: 100%;
     background-color: #3498db;
@@ -80,7 +78,7 @@ nav {
     background-color: #1f6c8c;
 }
 
-/* Products Container */
+
 .container {
     width: 80%;
     margin: 40px auto;
@@ -97,7 +95,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* List of products */
+
 .products-list {
     display: flex;
     flex-wrap: wrap;
@@ -124,7 +122,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Button Styling */
+
 button {
     font-size: 16px;
     color: white;
@@ -141,7 +139,7 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* Admin Delete button styling */
+
 .btn-danger {
     background-color: #e74c3c;
     color: white;
@@ -153,7 +151,7 @@ button:hover {
 .btn-danger:hover {
     background-color: #c0392b;
 }
-/* Back to Home button styling */
+
 .back-home-container {
     margin-top: 30px;
     text-align: center;
@@ -172,7 +170,7 @@ button:hover {
     background-color: #2980b9; /* Darker blue on hover */
 }
 
-/* Responsive Design */
+
 @media (max-width: 600px) {
     .products-list {
         flex-direction: column;

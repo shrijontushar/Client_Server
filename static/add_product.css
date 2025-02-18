@@ -16,14 +16,14 @@ body {
     flex-direction: column;
 }
 
-/* Navbar */
+
 nav {
     width: 100%;
     background-color: #3498db;
     padding: 10px 20px;
 }
 
-/* Navbar */
+
 nav {
     width: 100%;
     background-color: #3498db;
@@ -62,7 +62,7 @@ nav {
     background-color: #1f6c8c;
 }
 
-/* Flash Messages */
+
 .flash-messages {
     margin-bottom: 20px;
     width: 100%;
@@ -151,7 +151,6 @@ a:hover {
     margin-top: 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 600px) {
     .container {
         width: 90%;
